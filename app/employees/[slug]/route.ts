@@ -29,28 +29,29 @@ import { NextRequest, NextResponse } from "next/server";
  *         required: true
  *         schema:
  *           type: string
- *       - in: body
- *         name: employee
- *         description: The employee data to update.
- *         schema:
- *           type: object
- *           required:
- *             - name
- *             - job_title
- *             - department
- *             - years_with_company
- *             - salary
- *           properties:
- *             name:
- *               type: string
- *             job_title:
- *               type: string
- *             department:
- *               type: string
- *             years_with_company:
- *               type: number
- *             salary:
- *               type: number
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - name
+ *               - job_title
+ *               - department
+ *               - years_with_company
+ *               - salary
+ *             properties:
+ *               name:
+ *                 type: string
+ *               job_title:
+ *                 type: string
+ *               department:
+ *                 type: string
+ *               years_with_company:
+ *                 type: number
+ *               salary:
+ *                 type: number
  *     responses:
  *       200:
  *         description: Employee updated
@@ -64,11 +65,12 @@ import { NextRequest, NextResponse } from "next/server";
  *         required: true
  *         schema:
  *           type: string
- *       - in: body
- *         name: employee
- *         description: The employee data to modify.
- *         schema:
- *           type: object
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
  *     responses:
  *       200:
  *         description: Employee modified
@@ -85,8 +87,8 @@ import { NextRequest, NextResponse } from "next/server";
  *     responses:
  *       200:
  *         description: Employee deleted
- *       500:
- *         description: Server Error
+ *       404:
+ *         description: Employee not found
  */
 export async function GET(
   request: NextRequest,
