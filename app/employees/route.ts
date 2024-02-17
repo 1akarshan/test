@@ -48,10 +48,12 @@ export const GET = async (req: Request, res: Response) => {
   try {
     const response = await getAllFromDb();
     if (response.length === 0) {
-      return NextResponse.json(
-        { error: "No employees found" },
-        { status: 404 }
-      );
+      return NextResponse.json({
+        total: 0,
+        average_years_with_company: null,
+        average_salary: null,
+        employees: [],
+      });
     }
     let totalYears = 0;
     let totalSalary = 0;
