@@ -1,7 +1,8 @@
 //@ts-nocheck
 import { NextResponse } from "next/server";
 import yaml from "js-yaml";
-const yamlString = `openapi: "3.0.0"
+const yamlString = `
+openapi: "3.0.0"
 info:
   version: "1.0.0"
   title: "Employee API"
@@ -13,7 +14,7 @@ paths:
         "200":
           description: Returns total number of employees, average years with company, average salary, and employee data
         "404":
-          description: No employees found
+          description: No employees found, or error
     post:
       description: Adds a new employee
       requestBody:
@@ -44,8 +45,8 @@ paths:
           description: Employee added successfully
         "400":
           description: Invalid body
-        "500":
-          description: Server Error
+        "405":
+          description: Error
   /api/employees/{id}:
     get:
       description: Returns the employee with the given id
@@ -126,8 +127,8 @@ paths:
       responses:
         "200":
           description: Employee deleted
-        "500":
-          description: Server Error
+        "404":
+          description: Employee not found
 `;
 export const GET = async (req: Request, res: Response) => {
   const loadYaml = yaml.load(yamlString);

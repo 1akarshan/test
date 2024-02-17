@@ -140,7 +140,8 @@ export async function PUT(
       !employee.job_title ||
       !employee.department ||
       !employee.years_with_company ||
-      !employee.salary
+      !employee.salary ||
+      Object.keys(employee).length !== 5
     ) {
       return NextResponse.json(
         { error: "Invalid body", status: 400 },
