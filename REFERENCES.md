@@ -1,0 +1,5 @@
+- Next.js docs: https://nextjs.org/docs
+- Setting up drizzle and planet scale with Next.js: https://tuffstuff9.hashnode.dev/setting-up-drizzle-orm-with-planetscale-for-your-nextjs-13-app
+- Setting up api in nextjs: https://medium.com/@patel.d/quick-guide-add-get-api-in-next-js-13-app-router-69f6e5e938be
+- Next.js RESPONSE : https://nextjs.org/docs/app/api-reference/functions/next-response
+- Next.js OPENAI Swagger (api docs) : https://github.com/jellydn/next-swagger-doc/tree/main

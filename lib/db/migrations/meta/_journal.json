@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1707758599562,
+      "tag": "0000_wide_lake",
+      "breakpoints": true
+    }
+  ]
+}
